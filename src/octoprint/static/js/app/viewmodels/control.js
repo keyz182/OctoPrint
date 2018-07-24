@@ -382,7 +382,12 @@ $(function() {
             if (self.webcamDisableTimeout != undefined) {
                 clearTimeout(self.webcamDisableTimeout);
             }
-            var webcamImage = $("#webcam_image");
+
+            var selector = '#webcam_image';
+            if(self.settings.webcam_streamVideo()){
+                selector = '#webcam_video';
+            }
+            var webcamImage = $(selector);
             var currentSrc = webcamImage.attr("src");
 
             // safari bug doesn't release the mjpeg stream, so we just set it up the once

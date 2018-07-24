@@ -202,6 +202,7 @@ default_settings = {
 	},
 	"webcam": {
 		"stream": None,
+		"video": False,
 		"streamRatio": "16:9",
 		"streamTimeout": 5,
 		"snapshot": None,

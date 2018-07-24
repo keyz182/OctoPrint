@@ -118,6 +118,7 @@ $(function() {
         self.printer_defaultExtrusionLength = ko.observable(undefined);
 
         self.webcam_streamUrl = ko.observable(undefined);
+        self.webcam_streamVideo = ko.observable(undefined);
         self.webcam_streamRatio = ko.observable(undefined);
         self.webcam_streamTimeout = ko.observable(undefined);
         self.webcam_snapshotUrl = ko.observable(undefined);
@@ -317,7 +318,13 @@ $(function() {
             }
 
             var text = gettext("If you see your webcam stream below, the entered stream URL is ok.");
-            var image = $('<img src="' + self.webcam_streamUrl() + '">');
+
+            if(self.webcam_streamVideo){
+                var image = $('<video controls src="' + self.webcam_streamUrl() + '">');
+            }else{
+                var image = $('<img src="' + self.webcam_streamUrl() + '">');
+            }
+
             var message = $("<p></p>")
                 .append(text)
                 .append(image);

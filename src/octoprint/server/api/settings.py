@@ -99,6 +99,7 @@ def getSettings():
 		},
 		"webcam": {
 			"streamUrl": s.get(["webcam", "stream"]),
+			"streamVideo": s.get(["webcam", "video"]),
 			"streamRatio": s.get(["webcam", "streamRatio"]),
 			"streamTimeout": s.getInt(["webcam", "streamTimeout"]),
 			"snapshotUrl": s.get(["webcam", "snapshot"]),
@@ -381,6 +382,7 @@ def _saveSettings(data):
 
 	if "webcam" in data.keys():
 		if "streamUrl" in data["webcam"]: s.set(["webcam", "stream"], data["webcam"]["streamUrl"])
+		if "streamVideo" in data["webcam"]: s.set(["webcam", "video"], data["webcam"]["streamVideo"])
 		if "streamRatio" in data["webcam"] and data["webcam"]["streamRatio"] in ("16:9", "4:3"): s.set(["webcam", "streamRatio"], data["webcam"]["streamRatio"])
 		if "streamTimeout" in data["webcam"]: s.setInt(["webcam", "streamTimeout"], data["webcam"]["streamTimeout"])
 		if "snapshotUrl" in data["webcam"]: s.set(["webcam", "snapshot"], data["webcam"]["snapshotUrl"])

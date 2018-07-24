@@ -7,4 +7,11 @@
         </div>
         <span class="help-inline">{% trans %}Needs to be reachable from the browser displaying the OctoPrint UI, used to embed the webcam stream into the page.{% endtrans %}</span>
     </div>
+
+    <div class="controls">
+        <label class="checkbox">
+            <input type="checkbox" data-bind="checked: webcam_streamVideo" id="settings-webcamStreamVideo"> {{ _('Is Video') }}
+        </label>
+        <span class="help-inline">{% trans %}Use an HTML5 &lt;video&gt; element to display the stream instead of &lt;img&gt;.{% endtrans %}</span>
+    </div>
 </div>
